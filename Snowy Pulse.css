@@ -1,0 +1,202 @@
+/*Don´t coppy my code*/
+/**
+ * @name Snowy Pulse.
+ * @version 0.5
+ * @description Blue with white circle inside and the circle is pulsing.
+ * @author Czech autor ŠiškaYT
+ * @invite TPxjX5rjR9
+/**
+/* Background and general theme colors */
+:root {
+  --background-primary: #0b0f3b;
+  --background-secondary: #10143d;
+  --background-tertiary: #161a52;
+  --background-accent: #1e2260;
+  --text-normal: #b0c7ff;
+  --text-muted: #8a94c8;
+  --text-link: #8b9bff;
+}
+
+/* Gradient transitions for backgrounds */
+body {
+  background: linear-gradient(135deg, #0b0f3b, #1e2260);
+  color: var(--text-normal);
+  overflow: hidden; /* Prevents scrollbar from interfering with animation */
+  position: relative; /* Needed for absolutely positioned pseudo-elements */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(11,15,59,0.3) 0%, rgba(30,34,96,0.3) 100%);
+  animation: moveBackground 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  animation: explosion 4s ease-in-out infinite;
+}
+
+@keyframes explosion {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  25% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.5);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.1) 70%);
+  }
+  75% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+/* Sidebar */
+.sidebar-2K8pFh {
+  background: linear-gradient(135deg, #10143d, #1e2260);
+}
+
+/* Server list */
+.guilds-1SWlCJ {
+  background: var(--background-tertiary);
+}
+
+/* Channel list */
+.container-1NXEtd {
+  background: var(--background-secondary);
+}
+
+/* Chat area */
+.chat-3bRxxu {
+  background: var(--background-primary);
+  color: var(--text-normal);
+}
+
+/* Messages */
+.message-2qnXI6 {
+  background: var(--background-tertiary);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 5px;
+  transition: background 0.3s ease;
+}
+
+.message-2qnXI6:hover {
+  background: var(--background-accent);
+}
+
+/* Input area */
+.textArea-2Spzkt {
+  background: var(--background-tertiary);
+  border-radius: 8px;
+  color: var(--text-normal);
+}
+
+.textArea-2Spzkt:focus {
+  background: var(--background-accent);
+}
+
+/* Scrollbars */
+.scrollbar-3dvm_9::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-3dvm_9::-webkit-scrollbar-thumb {
+  background: var(--background-accent);
+  border-radius: 4px;
+}
+
+.scrollbar-3dvm_9::-webkit-scrollbar-thumb:hover {
+  background: var(--background-secondary);
+}
+
+/* Links and interactive elements */
+a {
+  color: var(--text-link);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #b0c7ff;
+}
+
+/* Popouts and modals */
+.layer-v9HyYc,
+.modal-3c3bKg {
+  background: var(--background-primary);
+  color: var(--text-normal);
+}
+
+/* Buttons */
+.button-1ZiXG9 {
+  background: var(--background-accent);
+  color: var(--text-normal);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.button-1ZiXG9:hover {
+  background: var(--background-secondary);
+  color: #b0c7ff;
+}
+
+/* Spotify integration */
+.container-SrIRxH {
+  background: var(--background-secondary) !important;
+  color: var(--text-normal) !important;
+  border-radius: 8px;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.container-SrIRxH:hover {
+  background: var(--background-accent) !important;
+}
+
+/* User panel (bottom right) */
+.accountDetails-3Pq5t6 {
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  border-radius: 8px;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.accountDetails-3Pq5t6:hover {
+  background: var(--background-accent);
+}
